@@ -13,7 +13,7 @@ import {
   countCharacters,
 } from "./index.js";
 
-describe("getCohort", function () {
+describe.only("getCohort", function () {
   it("returns the cohort of a student", function () {
     expect(getCohort({ cohort: 2012, name: "Alice" })).toBe(2012);
   });
@@ -25,7 +25,7 @@ describe("getCohort", function () {
   });
 });
 
-describe("sortStudents", function () {
+describe.only("sortStudents", function () {
   it("returns the student whose name comes first alphabetically", function () {
     const studentA = { cohort: 1, name: "Alice" };
     const studentB = { cohort: 1, name: "Bob" };
@@ -48,7 +48,7 @@ describe("sortStudents", function () {
   });
 });
 
-describe("makeFlag", function () {
+describe.only("makeFlag", function () {
   it("returns an object with the given color and icon", function () {
     expect(makeFlag("red", "circle")).toEqual({ color: "red", icon: "circle" });
   });
@@ -57,7 +57,7 @@ describe("makeFlag", function () {
   });
 });
 
-describe("increment", function () {
+describe.only("increment", function () {
   it("increments the value by 1", function () {
     expect(increment({ value: 1 })).toEqual({ value: 2 });
   });
@@ -72,7 +72,7 @@ describe("increment", function () {
   });
 });
 
-describe("getTaxicabDistance", function () {
+describe.only("getTaxicabDistance", function () {
   it("returns the correct taxicab distance", function () {
     expect(getTaxicabDistance({ x: 0, y: 0 }, { x: 3, y: 4 })).toBe(7);
   });
@@ -84,7 +84,7 @@ describe("getTaxicabDistance", function () {
   });
 });
 
-describe("getHerbivores", function () {
+describe.only("getHerbivores", function () {
   it("returns herbivores", function () {
     expect(
       getHerbivores([
@@ -113,7 +113,7 @@ describe("getHerbivores", function () {
   });
 });
 
-describe("getCarnivoreNames", function () {
+describe.only("getCarnivoreNames", function () {
   it("returns names of carnivorous animals", function () {
     expect(
       getCarnivoreNames([
@@ -142,7 +142,7 @@ describe("getCarnivoreNames", function () {
   });
 });
 
-describe("getTotalCost", function () {
+describe.only("getTotalCost", function () {
   it("returns 0 for empty cart", function () {
     expect(getTotalCost([])).toBe(0);
   });
@@ -171,7 +171,7 @@ describe("getTotalCost", function () {
   });
 });
 
-describe("zip", function () {
+describe.only("zip", function () {
   it("zips two arrays into an object", function () {
     expect(zip(["x", "y"], [6, 7])).toEqual({ x: 6, y: 7 });
   });
@@ -183,7 +183,7 @@ describe("zip", function () {
   });
 });
 
-describe("countCharacters", function () {
+describe.only("countCharacters", function () {
   it("returns empty object for empty string", function () {
     expect(countCharacters("")).toEqual({});
   });

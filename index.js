@@ -11,6 +11,7 @@
  * getCohort({cohort: 3476, name: "Charlie"}); // 3476
  */
 export function getCohort(student) {
+  return student[cohort];
   // TODO
 }
 
@@ -30,6 +31,14 @@ export function getCohort(student) {
  * sortStudents({cohort: 1, name: "Alice"}, {cohort: 2, name: "Alice"}); // {cohort: 1, name: "Alice"}
  */
 export function sortStudents(studentA, studentB) {
+  if (studentA.name === studentB.name) {
+    return studentA;
+  }
+  if (studentA.name > studentB.name) {
+    return studentA;
+  }  else {
+    return studentB;
+  }
   // TODO
 }
 
@@ -47,6 +56,10 @@ export function sortStudents(studentA, studentB) {
  * makeFlag("yellow", "triangle"); // { color: "yellow", icon: "triangle" }
  */
 export function makeFlag(color, icon) {
+  return {
+    color: color,
+    icon: icon
+  };
   // TODO
 }
 
@@ -63,6 +76,9 @@ export function makeFlag(color, icon) {
  * increment({value: -5}); // {value: -4}
  */
 export function increment(count) {
+  return {
+    value: count.value + 1
+  };
   // TODO
 }
 
@@ -90,7 +106,7 @@ export function increment(count) {
  *
  */
 export function getTaxicabDistance(from, to) {
-  // TODO
+  return Math.abs(from.x - to.x) + Math.abs(from.y - to.y);
 }
 
 /**
@@ -106,8 +122,16 @@ export function getTaxicabDistance(from, to) {
  * getHerbivores([{name: "Rabbit", isHerbivore: true}]); // [{name: "Rabbit", isHerbivore: true}]
  */
 export function getHerbivores(animals) {
-  // TODO
-}
+  const result = [];
+
+  for (const animal of animals) {
+    if (animal.isHerbivore) {
+      result.push(animal);
+    }
+  } 
+  return result; 
+} // TODO
+
 
 /**
  * @typedef {{name: string, isCarnivore: boolean}} Animal
@@ -122,6 +146,14 @@ export function getHerbivores(animals) {
  * getCarnivoreNames([{name: "Wolf", isCarnivore: true}]); // ["Wolf"]
  */
 export function getCarnivoreNames(animals) {
+  const result = [];
+
+  for (const animal of animals) {
+    if (animal.isCarnivore) {
+      result.push(animal.name);
+    }
+  }
+  return result;
   // TODO
 }
 
@@ -143,6 +175,12 @@ export function getCarnivoreNames(animals) {
  * getTotalCost([{name: "Notebook", quantity: 0, price: 5}]); // 0
  */
 export function getTotalCost(cart) {
+  let total = 0;
+
+  for (const item of cart) {
+    total += item.quantity * item.cost;
+  }
+  return total;
   // TODO
 }
 
@@ -163,6 +201,13 @@ export function getTotalCost(cart) {
  * zip(["x"], ["x"]); // {x: "x"}
  */
 export function zip(keys, values) {
+  const object = {};
+
+  for (let i = 0; i < keys.length; i++) {
+    object[keys[i]] = values[i];
+  }
+  return object;
+
   // TODO
 }
 
@@ -179,5 +224,15 @@ export function zip(keys, values) {
  * countCharacters("aAa"); // {a: 2, A: 1}
  */
 export function countCharacters(word) {
+  const result = {};
+  
+  for (const character of word) {
+    if (result[character]) {
+      result[character]++;
+    }  else {
+        result[character] = 1;
+    }
+  }
+  return result;
   // TODO
 }
